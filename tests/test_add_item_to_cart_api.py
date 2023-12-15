@@ -46,7 +46,7 @@ def test_add_one_item_to_cart():
     with step('Check added item in cart'):
         browser.all('.cart-item-row').should(have.size(1))
         browser.element('.product-name').should(have.exact_text('Fiction'))
-        browser.element('.qty-input').should(have.value('1'))
+        browser.element('[name^="itemquantity"]').should(have.value('1'))
 
 
 def test_add_two_different_items_to_cart():
@@ -81,7 +81,7 @@ def test_add_three_same_item_to_cart():
     with step('Check added item in cart'):
         browser.all('.cart-item-row').should(have.size(1))
         browser.element('.product-name').should(have.exact_text('Smartphone'))
-        browser.element('.qty-input').should(have.value('2'))
+        browser.element('[name^="itemquantity"]').should(have.value('3'))
 
 
 
